@@ -48,8 +48,6 @@
   nav{position:fixed;bottom:0;left:0;right:0;padding:0.8rem 3rem;border-top:1px solid var(--border);background:var(--cream);display:flex;gap:1.5rem;font-size:0.72rem;z-index:99;justify-content:center;box-shadow:0 -2px 12px rgba(15,26,15,0.06);}
   nav a{color:var(--sage);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
   nav a:hover{color:var(--gold);}
-
-  /* Calculator */
   .calc-wrap{max-width:960px;margin:2.5rem auto;padding:0 2rem;}
   .hero{text-align:center;margin-bottom:2rem;}
   .hero h1{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--ink);margin-bottom:0.5rem;line-height:1.2;}
@@ -75,8 +73,6 @@
   .calc-btn{width:100%;background:var(--sage);color:white;border:none;border-radius:2px;padding:1rem;font-family:'DM Mono',monospace;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s,transform 0.1s;margin-top:1rem;}
   .calc-btn:hover{background:#3d6849;}
   .calc-btn:active{transform:scale(0.99);}
-
-  /* Results */
   .results{opacity:0;transform:translateY(10px);transition:opacity 0.4s,transform 0.4s;}
   .results.visible{opacity:1;transform:translateY(0);}
   .summary-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;}
@@ -132,8 +128,6 @@
   .btn-secondary:hover{background:var(--sage-pale);}
   .btn-gold{width:100%;background:var(--gold);color:white;border:none;border-radius:2px;padding:0.85rem;font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
   .btn-gold:hover{background:#b07820;}
-
-  /* Content */
   .content-wrap{max-width:960px;margin:0 auto;padding:0 2rem;}
   .ad-slot{background:var(--cream);border:1px dashed var(--border);text-align:center;padding:0.8rem;color:var(--muted);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;margin:2rem 0;}
   .ad-box{background:var(--border);height:90px;display:flex;align-items:center;justify-content:center;border-radius:2px;margin-top:0.3rem;color:var(--muted);font-size:0.7rem;}
@@ -173,7 +167,7 @@
   .broker-point strong{color:var(--gold);display:block;margin-bottom:0.2rem;}
   .tools-panel{background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:1.8rem;margin-bottom:2rem;}
   .tools-panel-title{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:1.2rem;color:var(--ink);padding-bottom:0.6rem;border-bottom:1px solid var(--border);}
-  .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
   .tool-card{background:var(--paper);border:1px solid var(--border);border-radius:4px;padding:1.2rem;text-decoration:none;color:var(--ink);transition:border-color 0.2s,box-shadow 0.2s;display:block;}
   .tool-card:hover{border-color:var(--sage);box-shadow:0 2px 8px rgba(74,124,89,0.12);}
   .tool-icon{font-size:1.4rem;margin-bottom:0.4rem;}
@@ -193,13 +187,13 @@
   footer{text-align:center;padding:1.5rem 2rem;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:1rem;line-height:2;}
   footer a{color:var(--sage);text-decoration:none;}
   footer a:hover{color:var(--gold);}
-  @media(max-width:680px){header{padding:1.5rem;flex-direction:column;gap:0.3rem;}.input-grid{grid-template-columns:1fr;}.summary-cards{grid-template-columns:1fr 1fr;}.breakdown-section{grid-template-columns:1fr;}.comp-grid{grid-template-columns:1fr;}.cmhc-grid{grid-template-columns:1fr;}.tips-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr;}.broker-points{grid-template-columns:1fr;}.tools-grid{grid-template-columns:1fr;}.share-row{grid-template-columns:1fr;}nav{padding:0.8rem 1rem;gap:0.8rem;font-size:0.65rem;}}
+  @media(max-width:680px){header{padding:1.5rem;flex-direction:column;gap:0.3rem;}.input-grid{grid-template-columns:1fr;}.summary-cards{grid-template-columns:1fr 1fr;}.breakdown-section{grid-template-columns:1fr;}.comp-grid{grid-template-columns:1fr;}.cmhc-grid{grid-template-columns:1fr;}.tips-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr;}.broker-points{grid-template-columns:1fr;}.tools-grid{grid-template-columns:1fr 1fr;}.share-row{grid-template-columns:1fr;}nav{padding:0.8rem 1rem;gap:0.8rem;font-size:0.65rem;}}
+  @media(max-width:400px){.tools-grid{grid-template-columns:1fr;}}
   @media print{body::before,nav,.ad-slot,.share-row,.tools-panel,.calc-btn{display:none !important;}.results{opacity:1 !important;transform:none !important;}}
 </style>
 </head>
 <body>
 
-<!-- US version banner -->
 <div style="background:#1a3a2a;color:#c8e8d0;text-align:center;padding:0.7rem 2rem;font-size:0.75rem;letter-spacing:0.05em;display:flex;align-items:center;justify-content:center;gap:0.8rem;">
   🇺🇸 Looking for the US version?
   <a href="https://mortgagemasher.com" target="_blank" rel="noopener" style="color:#c8922a;text-decoration:none;font-weight:500;border:1px solid #c8922a;padding:0.3rem 0.8rem;border-radius:2px;">Visit mortgagemasher.com →</a>
@@ -281,7 +275,6 @@
 
 <div class="content-wrap">
 
-  <!-- How It Works -->
   <div class="section">
     <h2>How the Canadian Mortgage Calculator Works</h2>
     <p>MortgageMasher uses the correct Canadian mortgage formula — semi-annual compounding as required by the Interest Act of Canada — to give you an accurate monthly payment. Simply enter your home price, down payment, interest rate and amortization period to instantly see your full mortgage picture.</p>
@@ -290,12 +283,10 @@
       <div class="step-card"><div class="step-number">02</div><div class="step-title">Set Your Rate &amp; Terms</div><div class="step-desc">Enter your interest rate and choose your amortization period and payment frequency. You can also add property tax, condo fees and home insurance to see your full monthly housing cost.</div></div>
       <div class="step-card"><div class="step-number">03</div><div class="step-title">See Your Full Picture</div><div class="step-desc">Instantly see your payment amount, total interest over the life of the mortgage, CMHC premium if applicable, and a side-by-side amortization comparison across multiple time periods.</div></div>
     </div>
-
     <h3>Why Canadian Mortgage Math is Different</h3>
     <p>Canadian mortgages are calculated differently than mortgages in the United States or most other countries. Under the Interest Act of Canada, mortgage interest must compound semi-annually — that is, only twice per year. In the US and many other countries, mortgages compound monthly (12 times per year).</p>
     <p>This means that a US mortgage calculator will give you a slightly wrong answer for a Canadian mortgage — even if you enter the same interest rate. The effective monthly rate for a Canadian mortgage is derived by taking the semi-annual rate and converting it to a monthly equivalent, which produces a slightly different number than simply dividing the annual rate by 12.</p>
     <p>MortgageMasher uses the correct Canadian formula throughout all calculations, ensuring your results accurately reflect what your actual lender will charge.</p>
-
     <h3>Understanding Payment Frequency Options</h3>
     <p><strong>Monthly:</strong> One payment per month, 12 payments per year. The standard option for most Canadian mortgages.</p>
     <p><strong>Semi-Monthly:</strong> Two payments per month, 24 payments per year. Each payment is half the monthly amount. No interest savings over monthly — you're simply splitting the payment.</p>
@@ -305,12 +296,10 @@
 
   <div class="ad-slot"><div>Advertisement</div><div class="ad-box">AdSense 728×90</div></div>
 
-  <!-- CMHC Deep Dive -->
   <div class="section">
     <h2>Canadian Mortgage Rules — CMHC Insurance Explained</h2>
     <p>CMHC mortgage insurance (also called mortgage default insurance) is mandatory for any home purchase in Canada where the down payment is less than 20% of the purchase price. It is administered by Canada Mortgage and Housing Corporation (CMHC), Sagen, and Canada Guaranty.</p>
     <p>It is important to understand that CMHC insurance protects the lender — not the borrower — in the event of mortgage default. Despite this, it benefits buyers by allowing them to purchase a home with as little as 5% down, which would otherwise be unavailable from most lenders without the insurance backing.</p>
-
     <h3>2026 CMHC Premium Rates</h3>
     <table class="cmhc-table">
       <thead><tr><th>Down Payment</th><th>Loan-to-Value Ratio</th><th>CMHC Premium Rate</th><th>Example on $500,000</th></tr></thead>
@@ -322,10 +311,8 @@
       </tbody>
     </table>
     <p style="font-size:0.72rem;color:var(--muted);margin-top:0.8rem;">The CMHC premium is added to your mortgage principal and paid off over the life of your amortization period. Provincial sales tax on the premium may also apply in some provinces and must be paid upfront.</p>
-
     <h3>When CMHC Insurance is Not Available</h3>
     <p>CMHC insurance is not available for homes priced at $1,000,000 or more — a 20% minimum down payment is required for all homes at this price point. Additionally, CMHC-insured mortgages are limited to a maximum 25-year amortization period. Conventional mortgages with 20% or more down can amortize over 30 years.</p>
-
     <h3>The First Home Savings Account (FHSA)</h3>
     <p>Introduced in 2023, the First Home Savings Account is one of the most powerful tools available to Canadians saving for their first home. Key features include:</p>
     <ul>
@@ -340,21 +327,19 @@
 
   <div class="ad-slot"><div>Advertisement</div><div class="ad-box">AdSense 728×90</div></div>
 
-  <!-- Tips -->
   <div class="section">
     <h2>Six Ways to Save Money on Your Canadian Mortgage</h2>
     <p>Small decisions at the time of purchase can save tens of thousands of dollars over the life of your mortgage. These strategies have the biggest financial impact.</p>
     <div class="tips-grid">
       <div class="tip-card"><div class="tip-icon">🎯</div><div class="tip-title">Put 20% Down to Eliminate CMHC</div><div class="tip-text">Saving to the 20% down payment threshold eliminates mandatory CMHC mortgage insurance entirely. On a $600,000 home, the difference between 19% and 20% down is just $6,000 more in your down payment — but it saves you approximately $14,250 in CMHC premiums added to your mortgage. If you're close to 20%, it is almost always worth waiting to save that extra amount.</div></div>
-      <div class="tip-card"><div class="tip-icon">📅</div><div class="tip-title">Choose Accelerated Bi-Weekly Payments</div><div class="tip-text">Switching from monthly to accelerated bi-weekly payments effectively adds one extra monthly payment per year. On a $500,000 mortgage at 5.25% over 25 years, accelerated bi-weekly payments can reduce your amortization by approximately 3 years and save over $30,000 in interest — with only a modest increase in your regular payment amount. Use this calculator to see the comparison.</div></div>
-      <div class="tip-card"><div class="tip-icon">💳</div><div class="tip-title">Make Annual Lump Sum Payments</div><div class="tip-text">Most Canadian mortgages allow annual lump sum prepayments of 10–20% of the original mortgage balance without penalty. Even one $5,000 lump sum payment in year one can save thousands in interest and shave months off your mortgage. Tax refunds, bonuses and inheritance are natural opportunities to make meaningful lump sum payments that compound in impact over decades.</div></div>
+      <div class="tip-card"><div class="tip-icon">📅</div><div class="tip-title">Choose Accelerated Bi-Weekly Payments</div><div class="tip-text">Switching from monthly to accelerated bi-weekly payments effectively adds one extra monthly payment per year. On a $500,000 mortgage at 5.25% over 25 years, accelerated bi-weekly payments can reduce your amortization by approximately 3 years and save over $30,000 in interest — with only a modest increase in your regular payment amount.</div></div>
+      <div class="tip-card"><div class="tip-icon">💳</div><div class="tip-title">Make Annual Lump Sum Payments</div><div class="tip-text">Most Canadian mortgages allow annual lump sum prepayments of 10–20% of the original mortgage balance without penalty. Even one $5,000 lump sum payment in year one can save thousands in interest and shave months off your mortgage. Tax refunds, bonuses and inheritance are natural opportunities to make meaningful lump sum payments.</div></div>
       <div class="tip-card"><div class="tip-icon">📉</div><div class="tip-title">Choose a Shorter Amortization</div><div class="tip-text">Every year you reduce your amortization period saves significant interest. Choosing 20 years instead of 25 years on a $500,000 mortgage at 5.25% increases your monthly payment by approximately $350 but saves over $60,000 in total interest. If your budget can comfortably handle the higher payment, a shorter amortization is one of the most powerful wealth-building decisions you can make.</div></div>
-      <div class="tip-card"><div class="tip-icon">🔄</div><div class="tip-title">Shop Aggressively at Renewal</div><div class="tip-text">Your mortgage is not locked to your current lender forever. At each renewal term (typically every 1–5 years) you are free to switch lenders without penalty. Rate differences of even 0.25% translate to thousands of dollars over a 5-year term. Start rate shopping at least 120 days before your renewal date. Many lenders will match a competitor's rate if you show them a written offer — especially through a mortgage broker.</div></div>
-      <div class="tip-card"><div class="tip-icon">📊</div><div class="tip-title">Pay Down High-Interest Debt First</div><div class="tip-text">Before increasing your mortgage down payment beyond 20%, consider whether you have other high-interest debt (credit cards at 20%+ or car loans at 7–10%). In most cases, paying off high-interest debt first delivers a higher guaranteed return than reducing a 5% mortgage. Use our Debt Payoff Calculator to see exactly which debts to tackle first and how much you'll save.</div></div>
+      <div class="tip-card"><div class="tip-icon">🔄</div><div class="tip-title">Shop Aggressively at Renewal</div><div class="tip-text">Your mortgage is not locked to your current lender forever. At each renewal term (typically every 1–5 years) you are free to switch lenders without penalty. Rate differences of even 0.25% translate to thousands of dollars over a 5-year term. Start rate shopping at least 120 days before your renewal date.</div></div>
+      <div class="tip-card"><div class="tip-icon">📊</div><div class="tip-title">Pay Down High-Interest Debt First</div><div class="tip-text">Before increasing your mortgage down payment beyond 20%, consider whether you have other high-interest debt (credit cards at 20%+ or car loans at 7–10%). In most cases, paying off high-interest debt first delivers a higher guaranteed return than reducing a 5% mortgage. Use our Debt Payoff Calculator to see exactly which debts to tackle first.</div></div>
     </div>
   </div>
 
-  <!-- Broker Section -->
   <div class="broker-section">
     <h2>🤝 Get the Best Rate — Work With a Licensed Mortgage Broker</h2>
     <p>MortgageMasher helps you understand your mortgage numbers. But when it comes to actually securing your mortgage, we strongly recommend working with a licensed mortgage broker rather than going directly to your bank.</p>
@@ -368,7 +353,6 @@
     <p style="font-size:0.72rem;color:var(--muted);margin-top:1rem;font-style:italic;">MortgageMasher does not recommend specific brokers or brokerage firms and does not receive compensation for this referral. This is general advice only — not financial advice. Please conduct your own due diligence when selecting a mortgage professional.</p>
   </div>
 
-  <!-- FAQ -->
   <div class="section">
     <h2>Frequently Asked Questions — Canadian Mortgages</h2>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is CMHC mortgage insurance and do I need it?</div><div class="faq-a">CMHC mortgage insurance is mandatory for any home purchase in Canada where the down payment is less than 20% of the purchase price. The premium ranges from 2.8% to 4.0% of the mortgage amount and is added to your mortgage principal. It protects the lender in case of default — not the borrower. If your down payment is 20% or more, CMHC insurance is not required and you save the entire premium amount. For homes priced at $1,000,000 or more, CMHC insurance is not available at any down payment level.</div></div>
@@ -383,13 +367,13 @@
 
   <div class="ad-slot"><div>Advertisement</div><div class="ad-box">AdSense 728×90</div></div>
 
-  <!-- Tools -->
   <div class="tools-panel">
     <div class="tools-panel-title">More Free Tools from Sharpline</div>
     <div class="tools-grid">
       <a href="https://vaultgoal.com" class="tool-card" target="_blank" rel="noopener"><div class="tool-icon">🎯</div><div class="tool-name">Savings Goal Tracker</div><div class="tool-desc">See exactly when you'll reach your down payment savings goal with milestone dates.</div><div class="tool-link">vaultgoal.com →</div></a>
       <a href="https://503020.ca" class="tool-card" target="_blank" rel="noopener"><div class="tool-icon">📊</div><div class="tool-name">50/30/20 Budget Calculator</div><div class="tool-desc">Check if your new mortgage payment fits comfortably within your 50% Needs budget.</div><div class="tool-link">503020.ca →</div></a>
       <a href="https://debtcrusher.ca" class="tool-card" target="_blank" rel="noopener"><div class="tool-icon">💳</div><div class="tool-name">Debt Payoff Calculator</div><div class="tool-desc">Pay off existing debt before closing to improve your mortgage qualification and rate.</div><div class="tool-link">debtcrusher.ca →</div></a>
+      <a href="https://rentbuy.tikdevapp.com/" class="tool-card" target="_blank" rel="noopener" style="border:1px dashed var(--border);opacity:0.85;"><div class="tool-icon">🏠</div><div class="tool-name" style="color:var(--muted);">Rent vs Buy Calculator</div><div class="tool-desc">Should you rent or buy? Compare the true long-term cost of both options.</div><div style="font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--border);padding-top:0.4rem;margin-top:0.4rem;margin-bottom:0.3rem;">⚠ External tool — not affiliated with Sharpline</div><div class="tool-link">rentbuy.tikdevapp.com →</div></a>
     </div>
   </div>
 
@@ -404,9 +388,7 @@
   <a href="https://www.reddit.com/user/sharplinetools/" target="_blank" rel="noopener">🟠 Reddit</a> &nbsp;·&nbsp;
   Not financial advice · Results are estimates
 </footer>
-
 <nav><a href="index.html">🏠 Calculator</a><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></nav>
-
 <div class="modal-overlay" id="emailModal">
   <div class="modal">
     <div class="modal-title"><button class="modal-close" onclick="closeEmailModal()">✕</button>Email Your Mortgage Summary</div>
@@ -417,7 +399,6 @@
     <p class="modal-note">Opens your email app with your mortgage summary pre-filled and ready to send.</p>
   </div>
 </div>
-
 <script>
   var lastResults={};
   function fmt(n){return 'CA$'+Math.round(Math.abs(n)).toLocaleString('en-CA');}
@@ -505,8 +486,8 @@
     var r=lastResults;
     if(!to){alert('Please enter a recipient email address.');return;}
     var greeting=from?from+' has shared their mortgage calculation with you.':'Here is my mortgage summary:';
-    var subject=encodeURIComponent('My Mortgage Calculation — MortgageMasher.com');
-    var body=encodeURIComponent(greeting+'\n\n━━━━━━━━━━━━━━━━━━━━━\nMORTGAGE SUMMARY\n━━━━━━━━━━━━━━━━━━━━━\n\nHome Price: CA$'+Math.round(r.homePrice).toLocaleString('en-CA')+'\nDown Payment: CA$'+Math.round(r.downPayment).toLocaleString('en-CA')+' ('+r.downPct.toFixed(1)+'%)\nMortgage Principal: CA$'+Math.round(r.totalPrincipal).toLocaleString('en-CA')+'\nInterest Rate: '+r.annualRate+'%\nAmortization: '+r.amortYears+' years\n\n'+r.freqLabel+' Payment: CA$'+r.periodicPayment.toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2})+'\nTotal Interest: CA$'+Math.round(r.totalInterest).toLocaleString('en-CA')+'\n'+(r.cmhcAmount>0?'CMHC Insurance: CA$'+Math.round(r.cmhcAmount).toLocaleString('en-CA')+'\n':'')+'\n━━━━━━━━━━━━━━━━━━━━━\nhttps://mortgagemasher.ca\nNot financial advice. Consult a licensed mortgage broker for actual rates and qualification.');
+    var subject=encodeURIComponent('My Mortgage Calculation — MortgageMasher.ca');
+    var body=encodeURIComponent(greeting+'\n\nMORTGAGE SUMMARY\n\nHome Price: CA$'+Math.round(r.homePrice).toLocaleString('en-CA')+'\nDown Payment: CA$'+Math.round(r.downPayment).toLocaleString('en-CA')+' ('+r.downPct.toFixed(1)+'%)\nMortgage Principal: CA$'+Math.round(r.totalPrincipal).toLocaleString('en-CA')+'\nInterest Rate: '+r.annualRate+'%\nAmortization: '+r.amortYears+' years\n\n'+r.freqLabel+' Payment: CA$'+r.periodicPayment.toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2})+'\nTotal Interest: CA$'+Math.round(r.totalInterest).toLocaleString('en-CA')+'\n'+(r.cmhcAmount>0?'CMHC Insurance: CA$'+Math.round(r.cmhcAmount).toLocaleString('en-CA')+'\n':'')+'\nhttps://mortgagemasher.ca\nNot financial advice. Consult a licensed mortgage broker for actual rates and qualification.');
     window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;closeEmailModal();
   }
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeEmailModal();});
