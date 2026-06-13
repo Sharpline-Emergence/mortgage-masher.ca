@@ -123,6 +123,7 @@
   .broker-callout strong{color:var(--ink);}
   .tip-box{background:var(--sage-pale);border-left:3px solid var(--sage);padding:1rem 1.2rem;border-radius:0 2px 2px 0;font-size:0.78rem;color:var(--sage);line-height:1.6;margin-bottom:2rem;}
   .tip-box strong{color:var(--ink);}
+  .tip-box a{color:var(--sage);font-weight:500;text-decoration:underline;}
   .share-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:2rem;}
   .btn-secondary{width:100%;background:transparent;color:var(--sage);border:1px solid var(--sage);border-radius:2px;padding:0.85rem;font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
   .btn-secondary:hover{background:var(--sage-pale);}
@@ -238,7 +239,7 @@
       <div class="field"><label>Annual Property Tax</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="propTax" placeholder="4,500" min="0" value="4500" /></div><div class="field-hint">Typical: 0.5%–1.5% of home value per year</div></div>
       <div class="field"><label>Monthly Condo/Strata Fee</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="condoFee" placeholder="0" min="0" value="0" /></div><div class="field-hint">Enter 0 if not applicable</div></div>
       <div class="field"><label>Monthly Home Insurance</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="insurance" placeholder="150" min="0" value="150" /></div></div>
-      <p style="font-size:0.68rem;color:var(--muted);text-align:center;margin-top:1.2rem;line-height:1.6;">✏️ Edit the fields with your details then tap Calculate.</p>
+      <p style="font-size:0.68rem;color:var(--muted);text-align:center;margin-top:1.2rem;line-height:1.6;">✏️ Edit the fields with your details then tap Calculate. <a href="amortization-guide.html" style="color:var(--sage);font-weight:bold;text-decoration:underline;">Learn about amortization →</a></p>
       <button class="calc-btn" onclick="calculate()">Calculate My Mortgage →</button>
     </div>
   </div>
@@ -388,7 +389,7 @@
   <a href="https://ca.pinterest.com/09cldr3fi281mrfxxo6ojrxbxrmmk6/" target="_blank" rel="noopener">📌 Pinterest</a> &nbsp;·&nbsp;
   Not financial advice · Results are estimates
 </footer>
-<nav><a href="index.html">🏠 Calculator</a><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></nav>
+<nav><a href="index.html">🏠 Calculator</a><a href="amortization-guide.html">📖 Amortization Guide</a><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></nav>
 <div class="modal-overlay" id="emailModal">
   <div class="modal">
     <div class="modal-title"><button class="modal-close" onclick="closeEmailModal()">✕</button>Email Your Mortgage Summary</div>
