@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What the Bank Won't Tell You at Renewal | MortgageMasher.ca</title>
+<meta name="description" content="A 26-year banker's honest account of how mortgage renewal offers really work in Canada — and the one move that could save you thousands. Written by P. Beal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4F0E5;
+    --cream-deep:#EBE5D6;
+    --ink:#24291E;
+    --ink-soft:#4A5140;
+    --sage:#5F6E4C;
+    --sage-deep:#47543A;
+    --gold:#B0872F;
+    --gold-soft:#C8A24A;
+    --rule:rgba(36,41,30,.14);
+    --shadow:rgba(36,41,30,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'DM Sans',system-ui,sans-serif;
+    font-size:19px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    font-weight:400;
+  }
+  ::selection{background:var(--gold-soft);color:var(--ink)}
+
+  /* ---- header ---- */
+  .masthead{
+    border-bottom:1px solid var(--rule);
+    background:var(--cream);
+    position:sticky;top:0;z-index:20;
+  }
+  .masthead-inner{
+    max-width:1080px;margin:0 auto;padding:18px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .wordmark{
+    font-family:'DM Serif Display',serif;
+    font-size:22px;letter-spacing:.2px;color:var(--ink);
+    text-decoration:none;
+  }
+  .wordmark b{color:var(--sage)}
+  .nav{display:flex;gap:26px}
+  .nav a{
+    font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+    padding-bottom:2px;border-bottom:1.5px solid transparent;transition:.18s;
+  }
+  .nav a:hover{color:var(--sage);border-color:var(--gold)}
+  @media(max-width:640px){.nav{display:none}}
+
+  /* ---- article shell ---- */
+  .wrap{max-width:720px;margin:0 auto;padding:0 28px}
+
+  .eyebrow{
+    font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--gold);
+    display:flex;align-items:center;gap:12px;margin:64px 0 26px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1.5px;background:var(--gold)}
+
+  h1{
+    font-family:'DM Serif Display',serif;font-weight:400;
+    font-size:clamp(2.3rem,6vw,3.6rem);line-height:1.06;
+    letter-spacing:-.5px;color:var(--ink);margin-bottom:26px;
+  }
+  h1 em{font-style:italic;color:var(--sage)}
+
+  .dek{
+    font-size:22px;line-height:1.55;color:var(--ink-soft);
+    font-weight:400;margin-bottom:38px;max-width:42ch;
+  }
+
+  .byline{
+    display:flex;align-items:center;gap:16px;
+    padding:20px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    margin-bottom:14px;
+  }
+  .avatar{
+    width:46px;height:46px;border-radius:50%;flex:none;
+    background:var(--sage);color:var(--cream);
+    font-family:'DM Serif Display',serif;font-size:20px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .byline-text{font-family:'DM Mono',monospace;font-size:13px;line-height:1.5;color:var(--ink-soft)}
+  .byline-text strong{color:var(--ink);font-weight:500}
+
+  .meta-line{
+    font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.05em;
+    color:var(--ink-soft);opacity:.75;margin-bottom:52px;
+  }
+
+  /* ---- body copy ---- */
+  article p{margin-bottom:26px}
+  article p.lead:first-of-type::first-letter{
+    font-family:'DM Serif Display',serif;
+    float:left;font-size:4.6rem;line-height:.78;
+    padding:6px 12px 0 0;color:var(--sage);
+  }
+  article h2{
+    font-family:'DM Serif Display',serif;font-weight:400;
+    font-size:clamp(1.6rem,4vw,2.15rem);line-height:1.15;
+    color:var(--ink);margin:54px 0 20px;letter-spacing:-.3px;
+  }
+  article h2 .num{
+    font-family:'DM Mono',monospace;font-size:.8rem;color:var(--gold);
+    display:block;letter-spacing:.14em;margin-bottom:8px;
+  }
+  article strong{font-weight:600;color:var(--ink)}
+  article em{font-style:italic}
+  a.inline{color:var(--sage-deep);text-decoration:underline;text-decoration-color:var(--gold-soft);text-underline-offset:3px}
+  a.inline:hover{color:var(--gold)}
+
+  /* ---- pull quote (signature element) ---- */
+  .pull{
+    margin:48px -12px;padding:38px 40px;
+    background:var(--sage-deep);color:var(--cream);
+    border-radius:3px;position:relative;
+  }
+  .pull::before{
+    content:"\201C";font-family:'DM Serif Display',serif;
+    position:absolute;top:2px;left:22px;font-size:5rem;color:var(--gold-soft);opacity:.55;line-height:1;
+  }
+  .pull p{
+    font-family:'DM Serif Display',serif;font-size:clamp(1.35rem,3.4vw,1.7rem);
+    line-height:1.32;margin:0;position:relative;
+  }
+  .pull cite{
+    display:block;margin-top:16px;font-family:'DM Mono',monospace;
+    font-style:normal;font-size:12.5px;letter-spacing:.06em;color:var(--gold-soft);
+  }
+
+  /* ---- callout box ---- */
+  .callout{
+    border:1px solid var(--rule);border-left:4px solid var(--gold);
+    background:var(--cream-deep);border-radius:3px;
+    padding:26px 30px;margin:40px 0;
+  }
+  .callout .tag{
+    font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+  }
+  .callout p{margin-bottom:0;font-size:17.5px;line-height:1.62}
+
+  /* ---- playbook list ---- */
+  .playbook{margin:34px 0;padding:0;list-style:none;counter-reset:step}
+  .playbook li{
+    position:relative;padding:22px 0 22px 58px;border-top:1px solid var(--rule);
+  }
+  .playbook li:last-child{border-bottom:1px solid var(--rule)}
+  .playbook li::before{
+    counter-increment:step;content:counter(step,decimal-leading-zero);
+    position:absolute;left:0;top:22px;
+    font-family:'DM Mono',monospace;font-size:14px;color:var(--gold);
+    font-weight:500;
+  }
+  .playbook h3{
+    font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;
+    color:var(--ink);margin-bottom:5px;
+  }
+  .playbook p{font-size:16.5px;line-height:1.58;color:var(--ink-soft);margin:0}
+
+  /* ---- calculator CTA ---- */
+  .calc-cta{
+    text-align:center;margin:56px 0;padding:44px 30px;
+    background:var(--cream-deep);border-radius:4px;border:1px solid var(--rule);
+  }
+  .calc-cta .k{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .calc-cta h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.7rem;color:var(--ink);margin-bottom:10px}
+  .calc-cta p{font-size:16.5px;color:var(--ink-soft);max-width:44ch;margin:0 auto 22px}
+  .btn{
+    display:inline-block;background:var(--sage);color:var(--cream);
+    font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    text-decoration:none;padding:14px 30px;border-radius:3px;transition:.18s;
+  }
+  .btn:hover{background:var(--sage-deep)}
+
+  /* ---- author box ---- */
+  .author-box{
+    display:flex;gap:20px;align-items:flex-start;
+    margin:60px 0 40px;padding:30px;border:1px solid var(--rule);border-radius:4px;
+    background:var(--cream-deep);
+  }
+  .author-box .avatar{width:56px;height:56px;font-size:24px}
+  .author-box h4{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.25rem;margin-bottom:6px}
+  .author-box p{font-size:15.5px;line-height:1.6;color:var(--ink-soft);margin:0}
+
+  .disclaimer{
+    font-size:13.5px;line-height:1.6;color:var(--ink-soft);opacity:.85;
+    padding:24px 0;border-top:1px solid var(--rule);margin-top:20px;
+  }
+
+  /* ---- footer ---- */
+  footer{
+    background:var(--ink);color:var(--cream);margin-top:70px;
+    padding:44px 28px;
+  }
+  .foot-inner{max-width:720px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+  .foot-inner .fm{font-family:'DM Serif Display',serif;font-size:20px}
+  .foot-inner .fm b{color:var(--gold-soft)}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-links a{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.05em;color:var(--cream);text-decoration:none;opacity:.8}
+  .foot-links a:hover{opacity:1;color:var(--gold-soft)}
+  .foot-copy{max-width:720px;margin:22px auto 0;font-family:'DM Mono',monospace;font-size:11.5px;color:var(--cream);opacity:.55;letter-spacing:.04em}
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="/" class="wordmark">Mortgage<b>Masher</b>.ca</a>
+    <nav class="nav">
+      <a href="/">Calculator</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="eyebrow">From the other side of the desk</div>
+
+  <h1>What your bank is <em>counting on</em> you doing at renewal</h1>
+
+  <p class="dek">For 28 years I sat on the bank's side of the renewal conversation. Here's the part I wasn't free to say out loud back then.</p>
+
+  <div class="byline">
+    <div class="avatar" aria-hidden="true">P</div>
+    <div class="byline-text">
+      <strong>P. Beal</strong><br>
+      28 years in banking &amp; financial planning
+    </div>
+  </div>
+  <div class="meta-line">Reading time ~ 8 min &nbsp;·&nbsp; Canadian mortgages</div>
+</div>
+
+<div class="wrap">
+<article>
+
+  <p class="lead">The letter arrives four to six months before your term is up. It has your name on it, a friendly line about how much the bank values you, and a rate. All you have to do is sign, or click, and your mortgage rolls into a new term. Most people do exactly that. I know, because for most of my career I was one of the people preparing those letters — and watching what happened next.</p>
+
+  <p>I want to be careful here, because I'm not out to tell you banks are villains. They're businesses. They have shareholders and margins and quarterly targets, the same as any business. But a mortgage renewal is one of the few moments in ordinary financial life where the institution's interest and yours pull in genuinely opposite directions — and almost nobody treats it that way. They treat it like a piece of admin. The bank is counting on that.</p>
+
+  <p>Think about how differently we act when we buy a car. Nobody walks onto a dealership lot, sees the sticker price, and simply pays it. You negotiate the price. Then you negotiate the financing — the rate, the term, the length. And you don't feel the least bit rude doing either, because everyone understands that's how the transaction works. Yet a mortgage is the largest loan most Canadians will ever carry, many times the size of a car loan, and at renewal people accept the first number they're handed without a single question. The instinct we'd bring to a $35,000 car somehow deserts us on a $500,000 mortgage. It shouldn't. If anything, the bigger the number, the more a little negotiation is worth — a quarter of a percent on a car loan is pocket change; a quarter of a percent on a mortgage, across a full term, is real money.</p>
+
+  <h2><span class="num">The quiet part</span>The renewal rate is rarely the best rate</h2>
+
+  <p>Here is the thing I could see from the inside that you can't see from the outside: the number on your renewal letter is a starting position, not a floor. It's priced with an expectation baked in — the expectation that a large share of people won't push back. In the industry this gets called a lot of polite things. In plain terms, it's an <strong>inertia premium</strong>. You're being quoted a rate that assumes you won't shop around, because statistically, most people don't.</p>
+
+  <p>I watched it play out thousands of times. A client would come in, renewal letter in hand, ready to sign. And every so often — not often enough — someone would say, "Actually, let me think about it." Those were the ones who ended up better off, almost without exception.</p>
+
+  <div class="pull">
+    <p>The clients who did best were the ones who quietly got a competing quote <em>before</em> they ever spoke to us.</p>
+    <cite>— what 28 years taught me</cite>
+  </div>
+
+  <h2><span class="num">The pattern</span>What the smart clients actually did</h2>
+
+  <p>The homeowners who consistently came out ahead had one habit in common. Before they responded to the bank at all, they took their renewal to an <strong>impartial mortgage broker</strong> and asked a simple question: can you beat this? A broker doesn't work for one lender — they shop your file across many. And more often than not, they'd come back with something more competitive than what the bank had put in front of me.</p>
+
+  <p>Then something revealing would happen. If that client had a real relationship with us — years of history, other accounts, a bit of loyalty — they'd bring the broker's number back and give us the chance to match or beat it. And here's the part worth sitting with: <strong>a lot of the time, we could.</strong> The bank would sharpen its pencil and suddenly find a better rate than the one on the letter it had sent two weeks earlier.</p>
+
+  <p>Think about what that tells you. If the bank can drop the rate the moment you produce a competing offer, then the rate on the original letter was never the best they were willing to do. It was the best they were willing to do <em>if you didn't ask.</em> The competing quote wasn't just a backup plan — it was the thing that unlocked the real number.</p>
+
+  <p>And the clients who didn't do any of this? They just signed. Every year, the largest group by far accepted the renewal offer exactly as written, no questions asked. It was the single most expensive reflex I watched people repeat, and it cost some of them thousands of dollars over a term without their ever knowing.</p>
+
+  <h2><span class="num">The confession</span>Why I couldn't just tell you</h2>
+
+  <p>You might reasonably ask why, if I could see all this, I didn't lean across the desk and say, "Go call a broker before you sign with us." The honest answer is that doing so, while I worked for the bank, could have put my job at risk. My role was to retain the bank's book of business, not to send clients across the street to a competitor. That was the arrangement, and I understood it.</p>
+
+  <p>It's also exactly why I feel free to say it plainly now that I'm on this side of things. I'm not retaining anyone's mortgage book anymore. I have no rate to protect and no branch target to hit. So I'll tell you the thing I couldn't back then, as directly as I can put it: <strong>before you renew, talk to a mortgage broker first.</strong> Every single time. Even if you love your bank. Even if the rate looks fine. Especially then.</p>
+
+  <h2><span class="num">What changed</span>Your last excuse just disappeared</h2>
+
+  <p>For years there was one genuinely good reason people stayed put: switching lenders at renewal used to mean re-qualifying under the federal mortgage stress test. If your income had dipped, or rates had climbed, or your situation had shifted, you could fail that test and be stuck — trapped with your current lender, forced to take whatever they offered. That fear kept a lot of people from ever shopping.</p>
+
+  <p>That barrier is largely gone. As of <strong>November 21, 2024</strong>, Canada's banking regulator (OSFI) stopped requiring the stress test for what's called a <strong>"straight switch"</strong> at renewal — moving your mortgage to a new lender without increasing the balance or extending the amortization. It already didn't apply to insured mortgages; now it doesn't apply to the roughly 70% of Canadian mortgages that are uninsured either. In plain terms: if you're just moving your existing mortgage to a lender with a better rate, you generally no longer have to pass the test to do it.</p>
+
+  <div class="callout">
+    <div class="tag">One important caveat</div>
+    <p>This applies to a <em>straight switch</em> — same balance, same amortization. The moment you borrow more or stretch your amortization (a refinance, not a switch), the stress test comes back into play. Keep your renewal a switch, and the door stays open.</p>
+  </div>
+
+  <p>What this means practically is that the friction that used to protect the banks has been quietly removed. Lenders now have to compete to keep you at renewal, because leaving is easier than it's ever been. That shift is entirely in your favour — but only if you use it.</p>
+
+  <h2><span class="num">The playbook</span>How to renew like the clients who won</h2>
+
+  <p>None of this requires you to be an expert or to enjoy negotiating. It's a sequence, and if you run it in order, you capture most of the benefit:</p>
+
+  <ol class="playbook">
+    <li>
+      <h3>Start early — four to six months out</h3>
+      <p>Your lender can hold a rate for 90–120 days. Starting early means you're negotiating from choice, not from a deadline. Never let yourself get cornered into signing in the final week.</p>
+    </li>
+    <li>
+      <h3>Get a broker's quote before you reply to your bank</h3>
+      <p>This is the whole game. An impartial broker shops your file across many lenders at no cost to you. That number becomes your leverage — and your reality check.</p>
+    </li>
+    <li>
+      <h3>Take the better offer back to your bank</h3>
+      <p>If you'd rather stay, give them the chance to match or beat it. Often they will. If they won't, you now know their letter was never their best.</p>
+    </li>
+    <li>
+      <h3>Read past the rate</h3>
+      <p>Compare the terms, not just the number: prepayment privileges, penalty calculations, portability. A slightly higher rate with humane terms can beat a headline rate with a punishing fine print.</p>
+    </li>
+    <li>
+      <h3>Keep it a straight switch if you can</h3>
+      <p>Same balance, same amortization keeps you clear of the stress test and keeps every lender in play. If you need to borrow more, do that as a separate, deliberate decision.</p>
+    </li>
+  </ol>
+
+  <div class="calc-cta">
+    <div class="k">Before you sign anything</div>
+    <h3>See what your renewal actually costs</h3>
+    <p>Run your balance and a couple of competing rates through the calculator. A fraction of a percent looks small until you see it stretched across a full term.</p>
+    <a href="/" class="btn">Open the renewal calculator</a>
+  </div>
+
+  <h2>The one sentence, if you remember nothing else</h2>
+
+  <p>A renewal letter is an offer, not an invoice. It's the beginning of a negotiation the bank is quietly hoping you'll skip. Get one impartial quote before you respond, and you'll either save real money or confirm your bank's offer was fair — and either way, you'll have done the one thing most people never do. That's the whole secret. I just wasn't allowed to tell you until now.</p>
+
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">P</div>
+    <div>
+      <h4>P. Beal</h4>
+      <p>Peter spent 28 years in banking and financial planning before turning to writing plainly about the things he watched people get wrong. He's based in the Fraser Valley, British Columbia, and writes for MortgageMasher.ca to give Canadians the view from the other side of the desk.</p>
+    </div>
+  </div>
+
+  <p class="disclaimer">This article is general information based on the author's professional experience and is not personalized financial, mortgage, or legal advice. Mortgage rules, rates, and regulations change and vary by situation and province. Before making any decision about your mortgage, consult a licensed mortgage broker, financial advisor, or your lender about your specific circumstances.</p>
+
+</article>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="fm">Mortgage<b>Masher</b>.ca</div>
+    <div class="foot-links">
+      <a href="/">Calculator</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+      <a href="/privacy/">Privacy</a>
+    </div>
+  </div>
+  <p class="foot-copy">© 2026 MortgageMasher.ca · A Sharpline Tools property. Information provided for general educational purposes only.</p>
+</footer>
+
+</body>
+</html>
