@@ -11,40 +11,56 @@
 <link rel="canonical" href="https://mortgagemasher.ca/amortization-guide.html">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#0f1a0f;--paper:#f5f0e8;--sage:#4a7c59;--sage-light:#7aaa8a;--sage-pale:#d4e8da;--gold:#c8922a;--cream:#faf7f0;--muted:#8a8a7a;--border:#d8d0c0;}
+  :root{
+    --ink:#0f1a0f;--paper:#f5f0e8;--sage:#4a7c59;--sage-light:#7aaa8a;--sage-pale:#d4e8da;
+    --gold:#c8922a;--cream:#faf7f0;--muted:#8a8a7a;--border:#e4ddca;
+    --radius-lg:18px;--radius:12px;--radius-sm:8px;
+    --shadow-xs:0 1px 2px rgba(15,26,15,0.05);
+    --shadow-sm:0 2px 8px rgba(15,26,15,0.06),0 1px 2px rgba(15,26,15,0.04);
+    --shadow-gold:0 8px 24px rgba(200,146,42,0.18);
+    --hairline:1px solid rgba(15,26,15,0.07);
+  }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--paper);color:var(--ink);font-family:'DM Mono',monospace;min-height:100vh;padding-bottom:3rem;}
-  header{padding:2.5rem 3rem 1.5rem;display:flex;align-items:baseline;gap:1rem;border-bottom:1px solid var(--border);}
+  body{background:var(--paper);color:var(--ink);font-family:'DM Mono',monospace;min-height:100vh;padding-bottom:5.5rem;}
+  header{padding:2.5rem 3rem 1.5rem;display:flex;align-items:baseline;gap:1rem;position:relative;}
+  header::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--border) 15%,var(--border) 85%,transparent);}
   .logo{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--sage);letter-spacing:-0.02em;}
   .logo span{color:var(--gold);}
   .tagline{font-size:0.7rem;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;}
-  nav{position:fixed;bottom:0;left:0;right:0;padding:0.8rem 3rem;border-top:1px solid var(--border);background:var(--cream);display:flex;gap:1.5rem;font-size:0.72rem;z-index:99;justify-content:center;box-shadow:0 -2px 12px rgba(15,26,15,0.06);}
+  nav{position:fixed;bottom:0;left:0;right:0;padding:0.8rem 3rem;background:var(--cream);display:flex;gap:1.5rem;font-size:0.72rem;z-index:99;justify-content:center;box-shadow:0 -8px 24px rgba(15,26,15,0.08);border-top:var(--hairline);}
   nav a{color:var(--sage);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
   nav a:hover{color:var(--gold);}
   .content-wrap{max-width:860px;margin:2rem auto;padding:0 2rem;}
   .article-header{margin-bottom:2rem;}
   .article-meta{font-size:0.7rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1rem;}
-  h1{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--ink);margin-bottom:1rem;line-height:1.3;}
-  h2{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--ink);margin:2rem 0 1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
-  h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--sage);margin:1.5rem 0 0.8rem;}
+  h1{font-family:'DM Serif Display',serif;font-size:2.1rem;color:var(--ink);margin-bottom:1rem;line-height:1.3;letter-spacing:-0.01em;}
+  h2{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--ink);margin:2.4rem 0 1rem;padding-bottom:0.6rem;border-bottom:var(--hairline);}
+  h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--sage);margin:1.6rem 0 0.8rem;}
   p{font-size:0.85rem;line-height:2;color:var(--ink);margin-bottom:1rem;}
   strong{font-weight:500;color:var(--ink);}
   ul{margin:0 0 1rem 1.5rem;}
   ul li{font-size:0.85rem;line-height:2;color:var(--ink);margin-bottom:0.5rem;}
-  table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.8rem;}
-  th{text-align:left;padding:0.8rem;background:var(--sage-pale);border:1px solid var(--border);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:500;}
-  td{padding:0.8rem;border:1px solid var(--border);color:var(--ink);}
-  .tip-box{background:var(--sage-pale);border-left:3px solid var(--sage);padding:1rem 1.2rem;border-radius:0 2px 2px 0;font-size:0.8rem;color:var(--sage);line-height:1.8;margin:1.5rem 0;}
+  a.inline{color:var(--sage);font-weight:bold;text-decoration:none;border-bottom:1px solid var(--sage-pale);}
+  a.inline:hover{border-color:var(--sage);}
+
+  table{width:100%;border-collapse:collapse;margin:1.6rem 0;font-size:0.8rem;border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-xs);}
+  th{text-align:left;padding:0.75rem 0.9rem;background:var(--cream);border-bottom:2px solid var(--border);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+  td{padding:0.75rem 0.9rem;border-bottom:1px solid var(--border);background:var(--cream);color:var(--ink);}
+  tr:last-child td{border-bottom:none;}
+
+  .tip-box{background:var(--sage-pale);border-left:3px solid var(--sage);padding:1rem 1.2rem;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:0.8rem;color:var(--sage);line-height:1.8;margin:1.6rem 0;}
   .tip-box strong{color:var(--ink);}
-  .cta-box{background:var(--gold);color:white;padding:2rem;border-radius:4px;text-align:center;margin:2rem 0;}
+
+  .cta-box{background:linear-gradient(135deg,var(--gold),#b07820);color:white;padding:2.2rem;border-radius:var(--radius);text-align:center;margin:2.4rem 0;box-shadow:var(--shadow-gold);}
   .cta-box h3{color:white;margin-top:0;}
-  .cta-box p{color:white;margin-bottom:0.5rem;}
-  .cta-btn{display:inline-block;background:white;color:var(--gold);padding:0.85rem 2rem;text-decoration:none;border-radius:2px;font-weight:500;margin-top:1rem;transition:background 0.2s;}
-  .cta-btn:hover{background:#f5f0e8;}
-  footer{text-align:center;padding:1.5rem 2rem;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:2rem;line-height:2;}
+  .cta-box p{color:rgba(255,255,255,0.9);margin-bottom:0.5rem;}
+  .cta-btn{display:inline-block;background:white;color:var(--gold);padding:0.85rem 2rem;text-decoration:none;border-radius:100px;font-weight:500;margin-top:1rem;transition:transform 0.15s;}
+  .cta-btn:hover{transform:translateY(-1px);}
+
+  footer{text-align:center;padding:1.8rem 2rem 1.5rem;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;border-top:var(--hairline);margin-top:2rem;line-height:2;}
   footer a{color:var(--sage);text-decoration:none;}
   footer a:hover{color:var(--gold);}
-  @media(max-width:640px){header{padding:1.5rem;flex-direction:column;gap:0.3rem;}h1{font-size:1.5rem;}h2{font-size:1.2rem;}nav{padding:0.8rem 1rem;gap:0.8rem;font-size:0.65rem;}}
+  @media(max-width:640px){header{padding:1.5rem;flex-direction:column;gap:0.3rem;}h1{font-size:1.6rem;}h2{font-size:1.2rem;}nav{padding:0.8rem 1rem;gap:0.8rem;font-size:0.65rem;}}
 </style>
 </head>
 <body>
@@ -60,7 +76,7 @@
     <h1>How to Calculate Mortgage Amortization in Canada: Complete Guide for First-Time Homebuyers</h1>
   </div>
 
-  <p><strong>Quick answer:</strong> Mortgage amortization is the process of paying off your home loan through regular monthly payments over a set period (typically 25 years in Canada). Each payment covers interest charges first, then the remaining amount reduces your principal balance. You can calculate monthly payments using a formula or our <a href="https://mortgagemasher.ca" style="color:var(--sage);font-weight:bold;">free Canadian mortgage amortization calculator</a>.</p>
+  <p><strong>Quick answer:</strong> Mortgage amortization is the process of paying off your home loan through regular monthly payments over a set period (typically 25 years in Canada). Each payment covers interest charges first, then the remaining amount reduces your principal balance. You can calculate monthly payments using a formula or our <a href="https://mortgagemasher.ca" class="inline">free Canadian mortgage amortization calculator</a>.</p>
 
   <p>When you're buying your first home in Canada, understanding how your mortgage payment is broken down can feel overwhelming. You'll hear terms like "amortization," "principal," and "interest"—but what does it actually mean for your monthly budget?</p>
 
@@ -88,7 +104,7 @@
     <li><strong>Payment 300 (25 years):</strong> Interest = $75 | Principal = $3,019</li>
   </ul>
 
-  <p>Notice the massive difference? Early payments barely touch the principal balance. This is why <a href="https://mortgagemasher.ca" style="color:var(--sage);font-weight:bold;">making accelerated payments</a> in the early years can shave years off your mortgage.</p>
+  <p>Notice the massive difference? Early payments barely touch the principal balance. This is why <a href="https://mortgagemasher.ca" class="inline">making accelerated payments</a> in the early years can shave years off your mortgage.</p>
 
   <h2>The Canadian Mortgage Amortization Formula</h2>
 
@@ -157,62 +173,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>$3,094</td>
-        <td>$1,833</td>
-        <td>$1,261</td>
-        <td>$398,739</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>$3,094</td>
-        <td>$1,825</td>
-        <td>$1,269</td>
-        <td>$397,470</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>$3,094</td>
-        <td>$1,818</td>
-        <td>$1,276</td>
-        <td>$396,194</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>$3,094</td>
-        <td>$1,797</td>
-        <td>$1,297</td>
-        <td>$393,861</td>
-      </tr>
-      <tr>
-        <td>12</td>
-        <td>$3,094</td>
-        <td>$1,750</td>
-        <td>$1,344</td>
-        <td>$388,273</td>
-      </tr>
-      <tr>
-        <td>60 (5 years)</td>
-        <td>$3,094</td>
-        <td>$1,441</td>
-        <td>$1,653</td>
-        <td>$351,778</td>
-      </tr>
-      <tr>
-        <td>150 (12.5 years)</td>
-        <td>$3,094</td>
-        <td>$838</td>
-        <td>$2,256</td>
-        <td>$227,641</td>
-      </tr>
-      <tr>
-        <td>300 (25 years)</td>
-        <td>$3,094</td>
-        <td>$11</td>
-        <td>$3,083</td>
-        <td>$0</td>
-      </tr>
+      <tr><td>1</td><td>$3,094</td><td>$1,833</td><td>$1,261</td><td>$398,739</td></tr>
+      <tr><td>2</td><td>$3,094</td><td>$1,825</td><td>$1,269</td><td>$397,470</td></tr>
+      <tr><td>3</td><td>$3,094</td><td>$1,818</td><td>$1,276</td><td>$396,194</td></tr>
+      <tr><td>6</td><td>$3,094</td><td>$1,797</td><td>$1,297</td><td>$393,861</td></tr>
+      <tr><td>12</td><td>$3,094</td><td>$1,750</td><td>$1,344</td><td>$388,273</td></tr>
+      <tr><td>60 (5 years)</td><td>$3,094</td><td>$1,441</td><td>$1,653</td><td>$351,778</td></tr>
+      <tr><td>150 (12.5 years)</td><td>$3,094</td><td>$838</td><td>$2,256</td><td>$227,641</td></tr>
+      <tr><td>300 (25 years)</td><td>$3,094</td><td>$11</td><td>$3,083</td><td>$0</td></tr>
     </tbody>
   </table>
 
@@ -234,30 +202,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>15 years</td>
-        <td>$3,687</td>
-        <td>$262,680</td>
-        <td>$662,680</td>
-      </tr>
-      <tr>
-        <td>20 years</td>
-        <td>$3,324</td>
-        <td>$396,760</td>
-        <td>$796,760</td>
-      </tr>
-      <tr>
-        <td>25 years</td>
-        <td>$3,094</td>
-        <td>$528,200</td>
-        <td>$928,200</td>
-      </tr>
-      <tr>
-        <td>30 years</td>
-        <td>$2,936</td>
-        <td>$656,560</td>
-        <td>$1,056,560</td>
-      </tr>
+      <tr><td>15 years</td><td>$3,687</td><td>$262,680</td><td>$662,680</td></tr>
+      <tr><td>20 years</td><td>$3,324</td><td>$396,760</td><td>$796,760</td></tr>
+      <tr><td>25 years</td><td>$3,094</td><td>$528,200</td><td>$928,200</td></tr>
+      <tr><td>30 years</td><td>$2,936</td><td>$656,560</td><td>$1,056,560</td></tr>
     </tbody>
   </table>
 
@@ -273,50 +221,35 @@
   <h2>Common Mortgage Amortization Mistakes in Canada (And How to Avoid Them)</h2>
 
   <h3>Mistake #1: Confusing Your Payment with "What Goes to Building Equity"</h3>
-
   <p><strong>The Error:</strong> Assuming your $3,094 monthly payment is reducing your $400,000 loan evenly.</p>
-
   <p>In reality, only $1,261 goes to principal in month one. The other $1,833 is pure interest cost.</p>
-
   <p><strong>How to Avoid It:</strong> Request a complete amortization schedule from your lender. Actually <em>look</em> at it. See the numbers. This psychological shift matters—it's why many Canadians accelerate their mortgages early.</p>
 
   <h3>Mistake #2: Not Understanding CMHC Insurance Impact</h3>
-
   <p><strong>The Error:</strong> Thinking CMHC insurance is cheap because it's just a percentage.</p>
-
   <p>On a $500,000 home with a 10% down payment ($50,000), you'd owe $450,000 + CMHC insurance (~$19,000) = $469,000 in total debt. At 5.5% over 25 years, CMHC adds ~$85,000 to your total interest cost.</p>
-
-  <p><strong>How to Avoid It:</strong> Run scenarios with our <a href="https://mortgagemasher.ca" style="color:var(--sage);font-weight:bold;">Canadian mortgage calculator</a>. Compare 15% down (minimal CMHC) vs 10% down vs 5% down. You'll see the real cost.</p>
+  <p><strong>How to Avoid It:</strong> Run scenarios with our <a href="https://mortgagemasher.ca" class="inline">Canadian mortgage calculator</a>. Compare 15% down (minimal CMHC) vs 10% down vs 5% down. You'll see the real cost.</p>
 
   <h3>Mistake #3: Ignoring Interest Rate Differences</h3>
-
   <p><strong>The Error:</strong> "What's 0.5% difference? That's nothing."</p>
-
   <p>On a $400,000 Canadian mortgage, 0.5% difference = ~$212/month difference = $76,320 over 25 years.</p>
-
   <p><strong>How to Avoid It:</strong> Shop your mortgage rate with at least 3 lenders (banks, credit unions, mortgage brokers). Use our calculator to compare rates side-by-side.</p>
 
   <h3>Mistake #4: Not Using Prepayment Options</h3>
-
   <p><strong>The Error:</strong> Not realizing most Canadian mortgages let you pay extra toward principal.</p>
-
   <p>Adding just $100/month to principal can shave 2-3 years off a 25-year mortgage and save $50,000+ in interest.</p>
-
   <p><strong>How to Avoid It:</strong> Ask about prepayment privileges when you apply. Many lenders allow 15-20% annual prepayment without penalties. Make bonus payments when you can.</p>
 
   <h3>Mistake #5: Stretching Your Budget by Choosing 30-Year Amortization</h3>
-
   <p><strong>The Error:</strong> Opting for 30 years instead of 25 to lower payments by $158/month.</p>
-
   <p>That's $1,896 per year in savings—but costs you $128,360 in extra interest.</p>
-
   <p><strong>How to Avoid It:</strong> Get preapproved at 25 years. Once you own the home, live modestly if needed. As your income grows, make additional principal payments rather than stretching your original amortization.</p>
 
   <h2>Tools to Calculate Your Canadian Amortization (Without Spreadsheet Pain)</h2>
 
   <p>You can build an amortization schedule in Excel, but it's tedious and error-prone. It's easier to use a purpose-built tool.</p>
 
-  <p>Our <a href="https://mortgagemasher.ca" style="color:var(--sage);font-weight:bold;">free Canadian mortgage amortization calculator</a> does all of this instantly:</p>
+  <p>Our <a href="https://mortgagemasher.ca" class="inline">free Canadian mortgage amortization calculator</a> does all of this instantly:</p>
 
   <ul>
     <li>Generate full amortization schedules month-by-month</li>
@@ -345,7 +278,7 @@
 
   <p>The next step? Calculate your numbers. Get preapproved. And start building the home (and financial future) you actually want.</p>
 
-  <p style="margin-top:2rem;"><strong>Have questions about your Canadian mortgage?</strong> Our mortgage calculators cover down payment strategies, affordability checks, prepayment planning, and CMHC insurance costs—all designed for Canadian first-time buyers like you. Explore our full suite of <a href="https://mortgagemasher.ca" style="color:var(--sage);font-weight:bold;">free Canadian mortgage tools</a> today.</p>
+  <p style="margin-top:2rem;"><strong>Have questions about your Canadian mortgage?</strong> Our mortgage calculators cover down payment strategies, affordability checks, prepayment planning, and CMHC insurance costs—all designed for Canadian first-time buyers like you. Explore our full suite of <a href="https://mortgagemasher.ca" class="inline">free Canadian mortgage tools</a> today.</p>
 
 </div>
 

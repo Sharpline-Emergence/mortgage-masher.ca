@@ -77,21 +77,20 @@
   .hero p{font-size:0.82rem;color:var(--muted);line-height:1.8;max-width:520px;margin:0 auto 1.2rem;}
   .ca-badge{display:inline-flex;align-items:center;gap:0.6rem;background:var(--cream);border:var(--hairline);box-shadow:var(--shadow-xs);border-radius:100px;padding:0.5rem 1.1rem;font-size:0.68rem;color:var(--muted);}
 
-  /* unified promo callout system — replaces the ad-hoc inline-styled boxes */
-  .promo-callout{border-radius:var(--radius);padding:1.6rem 1.8rem;margin:1.6rem 0;display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;}
-  .promo-gold{background:linear-gradient(135deg,#fdf3e0,#fbecd0);border:1px solid rgba(200,146,42,0.28);box-shadow:var(--shadow-gold);}
-  .promo-sage{background:linear-gradient(135deg,var(--sage-pale),#e3f0e7);border:1px solid rgba(74,124,89,0.25);box-shadow:var(--shadow-sage);text-align:center;justify-content:center;}
-  .promo-eyebrow{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
-  .promo-sage .promo-eyebrow{color:var(--sage);}
-  .promo-headline{font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--ink);line-height:1.25;margin-bottom:0.35rem;}
-  .promo-sub{font-size:0.78rem;color:var(--muted);line-height:1.6;max-width:520px;}
-  .promo-body{flex:1 1 320px;min-width:0;}
-  .btn-pill{flex:none;display:inline-block;color:white;padding:0.85rem 1.7rem;text-decoration:none;border-radius:100px;font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;transition:transform 0.15s,box-shadow 0.15s;box-shadow:var(--shadow-sm);}
-  .btn-pill:hover{transform:translateY(-1px);}
-  .btn-pill.gold{background:var(--gold);}
-  .btn-pill.gold:hover{background:#b07820;}
-  .btn-pill.sage{background:var(--sage);}
-  .btn-pill.sage:hover{background:#3d6849;}
+  /* editorial reading list — plain, no fills, no shadows; reads as "further reading" not a marketing card */
+  .reading-list{border-top:var(--hairline);margin:2rem 0 1.8rem;}
+  .reading-item{display:flex;justify-content:space-between;align-items:center;gap:2.5rem;padding:1.4rem 0;border-bottom:var(--hairline);}
+  .reading-main{flex:1;min-width:0;}
+  .reading-eyebrow{display:block;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+  .reading-item.sage .reading-eyebrow{color:var(--sage);}
+  .reading-title{display:block;font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--ink);text-decoration:none;line-height:1.3;margin-bottom:0.35rem;transition:color 0.15s;}
+  .reading-title:hover{color:var(--sage);}
+  .reading-desc{font-size:0.76rem;color:var(--muted);line-height:1.65;margin:0;max-width:480px;}
+  .reading-link{flex:none;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--sage);text-decoration:none;white-space:nowrap;border-bottom:1px solid transparent;transition:border-color 0.15s;}
+  .reading-link:hover{border-color:var(--sage);}
+  .inline-cta{text-align:center;font-size:0.8rem;color:var(--muted);margin:2rem 0;line-height:1.7;}
+  .inline-cta a{color:var(--sage);font-weight:500;text-decoration:underline;}
+  @media(max-width:680px){.reading-item{flex-direction:column;align-items:flex-start;gap:0.6rem;}}
 
   .input-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;}
   .panel{background:var(--cream);border:var(--hairline);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:2rem;}
@@ -184,13 +183,16 @@
   .step-title{font-size:0.8rem;font-weight:500;color:var(--sage);margin-bottom:0.4rem;}
   .step-desc{font-size:0.73rem;color:var(--muted);line-height:1.7;}
 
-  .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1rem;}
-  .tip-card{background:var(--paper);border:var(--hairline);border-radius:var(--radius);padding:1.3rem;box-shadow:var(--shadow-xs);transition:box-shadow 0.2s,transform 0.2s;}
-  .tip-card:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);}
-  .tip-icon{width:2.1rem;height:2.1rem;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:var(--sage-pale);border-radius:100px;margin-bottom:0.6rem;}
-  .tip-title{font-size:0.8rem;font-weight:500;color:var(--sage);margin-bottom:0.4rem;}
-  .tip-text{font-size:0.73rem;color:var(--muted);line-height:1.7;}
+  .tip-list{border-top:var(--hairline);margin-top:1.2rem;}
+  .tip-row{display:flex;gap:1.2rem;padding:1.3rem 0;border-bottom:var(--hairline);}
+  .tip-row-icon{flex:none;width:1.5rem;text-align:center;font-size:1.05rem;line-height:1.7;color:var(--sage);}
+  .tip-row-body{flex:1;min-width:0;}
+  .tip-row-title{font-size:0.85rem;font-weight:500;color:var(--ink);margin-bottom:0.35rem;}
+  .tip-row-text{font-size:0.78rem;color:var(--muted);line-height:1.8;}
+  .tip-row-text a{color:var(--sage);font-weight:500;text-decoration:underline;}
 
+  .list-heading{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--ink);margin:2rem 0 0.3rem;}
+  .list-subheading{font-size:0.78rem;color:var(--muted);margin-bottom:0.5rem;}
   .cmhc-table{width:100%;border-collapse:collapse;font-size:0.78rem;margin-top:1rem;border-radius:var(--radius-sm);overflow:hidden;}
   .cmhc-table th{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:0.7rem 0.9rem;text-align:left;background:var(--paper);border-bottom:2px solid var(--border);}
   .cmhc-table td{padding:0.75rem 0.9rem;border-bottom:1px solid var(--border);color:var(--ink);}
@@ -213,18 +215,17 @@
   .broker-point strong{color:var(--gold);display:block;margin-bottom:0.25rem;}
   .broker-disclaimer{font-size:0.72rem;color:var(--muted);margin-top:1rem;font-style:italic;}
 
-  .tools-panel{background:var(--cream);border:var(--hairline);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:1.9rem;margin-bottom:2rem;}
-  .tools-panel-title{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:1.2rem;color:var(--ink);padding-bottom:0.6rem;border-bottom:var(--hairline);}
-  .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
-  .tool-card{background:var(--paper);border:var(--hairline);border-radius:var(--radius);padding:1.3rem;text-decoration:none;color:var(--ink);transition:box-shadow 0.2s,transform 0.2s;display:block;box-shadow:var(--shadow-xs);}
-  .tool-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);}
-  .tool-icon{width:2.1rem;height:2.1rem;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:var(--sage-pale);border-radius:100px;margin-bottom:0.5rem;}
-  .tool-name{font-size:0.8rem;font-weight:500;color:var(--sage);margin-bottom:0.3rem;}
-  .tool-desc{font-size:0.68rem;color:var(--muted);line-height:1.6;margin-bottom:0.5rem;}
-  .tool-link{font-size:0.65rem;color:var(--gold);letter-spacing:0.05em;}
-  .tool-card.external{border-style:dashed;opacity:0.85;box-shadow:none;}
-  .tool-card.external .tool-name{color:var(--muted);}
-  .tool-card.external .external-note{font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-top:var(--hairline);padding-top:0.4rem;margin:0.4rem 0 0.3rem;}
+  .tool-list{border-top:var(--hairline);}
+  .tool-row{display:flex;align-items:center;gap:1.2rem;padding:1.2rem 0;border-bottom:var(--hairline);text-decoration:none;color:inherit;transition:padding-left 0.15s;}
+  .tool-row:hover{padding-left:0.35rem;}
+  .tool-row-icon{flex:none;width:1.5rem;text-align:center;font-size:1.05rem;}
+  .tool-row-body{flex:1;min-width:0;}
+  .tool-row-name{font-size:0.84rem;font-weight:500;color:var(--sage);margin-bottom:0.25rem;}
+  .tool-row-desc{font-size:0.73rem;color:var(--muted);line-height:1.65;}
+  .tool-row-link{flex:none;font-size:0.66rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
+  .tool-row.external{opacity:0.75;}
+  .tool-row.external .tool-row-name{color:var(--muted);}
+  .tool-row.external .tool-row-desc::after{content:'· External tool, not affiliated with Sharpline';display:block;font-size:0.62rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem;}
 
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(15,26,15,0.5);z-index:200;align-items:center;justify-content:center;}
   .modal-overlay.open{display:flex;}
@@ -249,17 +250,13 @@
     .breakdown-section{grid-template-columns:1fr;}
     .comp-grid{grid-template-columns:1fr;}
     .cmhc-grid{grid-template-columns:1fr;}
-    .tips-grid{grid-template-columns:1fr;}
     .steps-grid{grid-template-columns:1fr;}
     .broker-points{grid-template-columns:1fr;}
-    .tools-grid{grid-template-columns:1fr 1fr;}
     .share-row{grid-template-columns:1fr;}
     nav{padding:0.8rem 1rem;gap:0.8rem;font-size:0.65rem;}
-    .promo-callout{flex-direction:column;text-align:center;}
-    .promo-gold .promo-body{text-align:center;}
+    .tool-row,.tip-row{gap:0.8rem;}
   }
-  @media(max-width:400px){.tools-grid{grid-template-columns:1fr;}}
-  @media print{body::before,nav,.ad-slot,.share-row,.tools-panel,.calc-btn{display:none !important;}.results{opacity:1 !important;transform:none !important;}}
+  @media print{body::before,nav,.ad-slot,.share-row,.calc-btn{display:none !important;}.results{opacity:1 !important;transform:none !important;}}
 </style>
 </head>
 <body>
@@ -289,21 +286,23 @@
 
 <div class="calc-wrap">
 
-  <div class="promo-callout promo-gold">
-    <div class="promo-body">
-      <div class="promo-eyebrow">Before you renew</div>
-      <div class="promo-headline">Renewing soon? Don't sign anything until you read this.</div>
-      <div class="promo-sub">What your bank won't tell you at renewal — from someone who spent 28 years on the other side of the desk.</div>
+  <div class="reading-list">
+    <div class="reading-item">
+      <div class="reading-main">
+        <span class="reading-eyebrow">Before you renew</span>
+        <a href="renewal-truth.html" class="reading-title">What your bank won't tell you at renewal</a>
+        <p class="reading-desc">From someone who spent 28 years on the other side of the desk.</p>
+      </div>
+      <a href="renewal-truth.html" class="reading-link">Read →</a>
     </div>
-    <a href="renewal-truth.html" class="btn-pill gold">Read the Article →</a>
-  </div>
-
-  <div class="promo-callout promo-sage">
-    <div class="promo-body">
-      <div class="promo-eyebrow">New here?</div>
-      <p style="font-size:0.82rem;color:var(--ink);"><strong>New to Canadian mortgage math?</strong> Understanding amortization, CMHC insurance, and payment frequency options helps you make smarter decisions about down payments and interest rates.</p>
+    <div class="reading-item sage">
+      <div class="reading-main">
+        <span class="reading-eyebrow">New here?</span>
+        <a href="amortization-guide.html" class="reading-title">The complete guide to Canadian mortgage amortization</a>
+        <p class="reading-desc">CMHC insurance, semi-annual compounding, and payment frequency strategies — explained plainly.</p>
+      </div>
+      <a href="amortization-guide.html" class="reading-link">Read →</a>
     </div>
-    <a href="amortization-guide.html" class="btn-pill sage">📖 Read the Amortization Guide</a>
   </div>
 
   <div class="input-grid">
@@ -358,12 +357,7 @@
     </div>
     <div class="tip-box" id="tipBox"></div>
 
-    <div class="promo-callout promo-gold" style="justify-content:center;text-align:center;">
-      <div class="promo-body" style="text-align:center;flex:none;max-width:560px;">
-        <p style="font-size:0.85rem;line-height:1.8;color:var(--ink);"><strong>Want to understand these numbers deeper?</strong> Our amortization guide explains Canadian semi-annual compounding, CMHC insurance rules, payment frequency strategies, and how to save tens of thousands of dollars.</p>
-      </div>
-      <a href="amortization-guide.html" class="btn-pill gold">Read the Full Guide →</a>
-    </div>
+    <p class="inline-cta">Want to understand these numbers deeper? <a href="amortization-guide.html">Read the full amortization guide →</a></p>
 
     <div class="ad-slot"><div>Advertisement</div><div class="ad-box">AdSense 728×90 Leaderboard</div></div>
     <div class="share-row">
@@ -430,13 +424,13 @@
   <div class="section">
     <h2>Six Ways to Save Money on Your Canadian Mortgage</h2>
     <p>Small decisions at the time of purchase can save tens of thousands of dollars over the life of your mortgage. These strategies have the biggest financial impact.</p>
-    <div class="tips-grid">
-      <div class="tip-card"><div class="tip-icon">🎯</div><div class="tip-title">Put 20% Down to Eliminate CMHC</div><div class="tip-text">Saving to the 20% down payment threshold eliminates mandatory CMHC mortgage insurance entirely. On a $600,000 home, the difference between 19% and 20% down is just $6,000 more in your down payment — but it saves you approximately $14,250 in CMHC premiums added to your mortgage. If you're close to 20%, it is almost always worth waiting to save that extra amount.</div></div>
-      <div class="tip-card"><div class="tip-icon">📅</div><div class="tip-title">Choose Accelerated Bi-Weekly Payments</div><div class="tip-text">Switching from monthly to accelerated bi-weekly payments effectively adds one extra monthly payment per year. On a $500,000 mortgage at 5.25% over 25 years, accelerated bi-weekly payments can reduce your amortization by approximately 3 years and save over $30,000 in interest — with only a modest increase in your regular payment amount.</div></div>
-      <div class="tip-card"><div class="tip-icon">💳</div><div class="tip-title">Make Annual Lump Sum Payments</div><div class="tip-text">Most Canadian mortgages allow annual lump sum prepayments of 10–20% of the original mortgage balance without penalty. Even one $5,000 lump sum payment in year one can save thousands in interest and shave months off your mortgage. Tax refunds, bonuses and inheritance are natural opportunities to make meaningful lump sum payments.</div></div>
-      <div class="tip-card"><div class="tip-icon">📉</div><div class="tip-title">Choose a Shorter Amortization</div><div class="tip-text">Every year you reduce your amortization period saves significant interest. Choosing 20 years instead of 25 years on a $500,000 mortgage at 5.25% increases your monthly payment by approximately $350 but saves over $60,000 in total interest. If your budget can comfortably handle the higher payment, a shorter amortization is one of the most powerful wealth-building decisions you can make.</div></div>
-      <div class="tip-card"><div class="tip-icon">🔄</div><div class="tip-title">Shop Aggressively at Renewal</div><div class="tip-text">Your mortgage is not locked to your current lender forever. At each renewal term (typically every 1–5 years) you are free to switch lenders without penalty. Rate differences of even 0.25% translate to thousands of dollars over a 5-year term. Start rate shopping at least 120 days before your renewal date. <a href="renewal-truth.html" style="color:var(--sage);font-weight:500;text-decoration:underline;">Read our insider guide to renewals →</a></div></div>
-      <div class="tip-card"><div class="tip-icon">📊</div><div class="tip-title">Pay Down High-Interest Debt First</div><div class="tip-text">Before increasing your mortgage down payment beyond 20%, consider whether you have other high-interest debt (credit cards at 20%+ or car loans at 7–10%). In most cases, paying off high-interest debt first delivers a higher guaranteed return than reducing a 5% mortgage. Use our Debt Payoff Calculator to see exactly which debts to tackle first.</div></div>
+    <div class="tip-list">
+      <div class="tip-row"><div class="tip-row-icon">🎯</div><div class="tip-row-body"><div class="tip-row-title">Put 20% Down to Eliminate CMHC</div><div class="tip-row-text">Saving to the 20% down payment threshold eliminates mandatory CMHC mortgage insurance entirely. On a $600,000 home, the difference between 19% and 20% down is just $6,000 more in your down payment — but it saves you approximately $14,250 in CMHC premiums added to your mortgage. If you're close to 20%, it is almost always worth waiting to save that extra amount.</div></div></div>
+      <div class="tip-row"><div class="tip-row-icon">📅</div><div class="tip-row-body"><div class="tip-row-title">Choose Accelerated Bi-Weekly Payments</div><div class="tip-row-text">Switching from monthly to accelerated bi-weekly payments effectively adds one extra monthly payment per year. On a $500,000 mortgage at 5.25% over 25 years, accelerated bi-weekly payments can reduce your amortization by approximately 3 years and save over $30,000 in interest — with only a modest increase in your regular payment amount.</div></div></div>
+      <div class="tip-row"><div class="tip-row-icon">💳</div><div class="tip-row-body"><div class="tip-row-title">Make Annual Lump Sum Payments</div><div class="tip-row-text">Most Canadian mortgages allow annual lump sum prepayments of 10–20% of the original mortgage balance without penalty. Even one $5,000 lump sum payment in year one can save thousands in interest and shave months off your mortgage. Tax refunds, bonuses and inheritance are natural opportunities to make meaningful lump sum payments.</div></div></div>
+      <div class="tip-row"><div class="tip-row-icon">📉</div><div class="tip-row-body"><div class="tip-row-title">Choose a Shorter Amortization</div><div class="tip-row-text">Every year you reduce your amortization period saves significant interest. Choosing 20 years instead of 25 years on a $500,000 mortgage at 5.25% increases your monthly payment by approximately $350 but saves over $60,000 in total interest. If your budget can comfortably handle the higher payment, a shorter amortization is one of the most powerful wealth-building decisions you can make.</div></div></div>
+      <div class="tip-row"><div class="tip-row-icon">🔄</div><div class="tip-row-body"><div class="tip-row-title">Shop Aggressively at Renewal</div><div class="tip-row-text">Your mortgage is not locked to your current lender forever. At each renewal term (typically every 1–5 years) you are free to switch lenders without penalty. Rate differences of even 0.25% translate to thousands of dollars over a 5-year term. Start rate shopping at least 120 days before your renewal date. <a href="renewal-truth.html">Read our insider guide to renewals →</a></div></div></div>
+      <div class="tip-row"><div class="tip-row-icon">📊</div><div class="tip-row-body"><div class="tip-row-title">Pay Down High-Interest Debt First</div><div class="tip-row-text">Before increasing your mortgage down payment beyond 20%, consider whether you have other high-interest debt (credit cards at 20%+ or car loans at 7–10%). In most cases, paying off high-interest debt first delivers a higher guaranteed return than reducing a 5% mortgage. Use our Debt Payoff Calculator to see exactly which debts to tackle first.</div></div></div>
     </div>
   </div>
 
@@ -467,14 +461,12 @@
 
   <div class="ad-slot"><div>Advertisement</div><div class="ad-box">AdSense 728×90</div></div>
 
-  <div class="tools-panel">
-    <div class="tools-panel-title">More Free Tools from Sharpline</div>
-    <div class="tools-grid">
-      <a href="https://vaultgoal.com" class="tool-card" target="_blank" rel="noopener"><div class="tool-icon">🎯</div><div class="tool-name">Savings Goal Tracker</div><div class="tool-desc">See exactly when you'll reach your down payment savings goal with milestone dates.</div><div class="tool-link">vaultgoal.com →</div></a>
-      <a href="https://503020.ca" class="tool-card" target="_blank" rel="noopener"><div class="tool-icon">📊</div><div class="tool-name">50/30/20 Budget Calculator</div><div class="tool-desc">Check if your new mortgage payment fits comfortably within your 50% Needs budget.</div><div class="tool-link">503020.ca →</div></a>
-      <a href="https://debtcrusher.ca" class="tool-card" target="_blank" rel="noopener"><div class="tool-icon">💳</div><div class="tool-name">Debt Payoff Calculator</div><div class="tool-desc">Pay off existing debt before closing to improve your mortgage qualification and rate.</div><div class="tool-link">debtcrusher.ca →</div></a>
-      <a href="https://rentbuy.tikdevapp.com/" class="tool-card external" target="_blank" rel="noopener"><div class="tool-icon">🏠</div><div class="tool-name">Rent vs Buy Calculator</div><div class="tool-desc">Should you rent or buy? Compare the true long-term cost of both options.</div><div class="external-note">⚠ External tool — not affiliated with Sharpline</div><div class="tool-link">rentbuy.tikdevapp.com →</div></a>
-    </div>
+  <div class="list-heading">More Free Tools from Sharpline</div>
+  <div class="tool-list">
+    <a href="https://vaultgoal.com" class="tool-row" target="_blank" rel="noopener"><div class="tool-row-icon">🎯</div><div class="tool-row-body"><div class="tool-row-name">Savings Goal Tracker</div><div class="tool-row-desc">See exactly when you'll reach your down payment savings goal with milestone dates.</div></div><div class="tool-row-link">vaultgoal.com →</div></a>
+    <a href="https://503020.ca" class="tool-row" target="_blank" rel="noopener"><div class="tool-row-icon">📊</div><div class="tool-row-body"><div class="tool-row-name">50/30/20 Budget Calculator</div><div class="tool-row-desc">Check if your new mortgage payment fits comfortably within your 50% Needs budget.</div></div><div class="tool-row-link">503020.ca →</div></a>
+    <a href="https://debtcrusher.ca" class="tool-row" target="_blank" rel="noopener"><div class="tool-row-icon">💳</div><div class="tool-row-body"><div class="tool-row-name">Debt Payoff Calculator</div><div class="tool-row-desc">Pay off existing debt before closing to improve your mortgage qualification and rate.</div></div><div class="tool-row-link">debtcrusher.ca →</div></a>
+    <a href="https://rentbuy.tikdevapp.com/" class="tool-row external" target="_blank" rel="noopener"><div class="tool-row-icon">🏠</div><div class="tool-row-body"><div class="tool-row-name">Rent vs Buy Calculator</div><div class="tool-row-desc">Should you rent or buy? Compare the true long-term cost of both options.</div></div><div class="tool-row-link">Visit →</div></a>
   </div>
 
 </div>
